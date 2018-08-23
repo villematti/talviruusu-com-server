@@ -1,0 +1,19 @@
+{
+  "name": "talviruusu-com-server",
+  "version": "1.0.0",
+  "description": "Talviruusu.com server with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/villematti/talviruusu-com-server.git"
+  },
+  "author": "Ville-Matti Hakanpää",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/villematti/talviruusu-com-server/issues"
+  },
+  "homepage": "https://github.com/villematti/talviruusu-com-server#readme"
+}
