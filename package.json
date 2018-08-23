@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/villematti/talviruusu-com-server/issues"
   },
-  "homepage": "https://github.com/villematti/talviruusu-com-server#readme"
+  "homepage": "https://github.com/villematti/talviruusu-com-server#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
