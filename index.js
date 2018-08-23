@@ -4,8 +4,8 @@ const vhost = require('vhost')
 const app = express()
 
 //Use the virtual hosts
-app.use(vhost('talviruusu.com', express.static('../talviruusu-com')));
-app.use(vhost('siivousville.com', express.static('../siivousville-com')));
+app.use(vhost('talviruusu.com', express.static('../talviruusu-com/dist')));
+app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
 
 //Start server
 var port = 80;
