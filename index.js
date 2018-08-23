@@ -25,13 +25,13 @@ const credentialB = {
 };
 
 const credentialC = {
-    host: 'siivousville.com',
+    host: 'www.siivousville.com',
     cert: fs.readFileSync(process.env.sv_www_cert),
     key: fs.readFileSync(process.env.sv_www_key),
 };
 
 const credentialD = {
-    host: 'talviruusu.com',
+    host: 'www.talviruusu.com',
     cert: fs.readFileSync(process.env.tr_www_cert),
     key: fs.readFileSync(process.env.tr_www_key),
 };
