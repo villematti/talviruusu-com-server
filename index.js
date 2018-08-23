@@ -27,6 +27,8 @@ const credentialB = {
 //Use the virtual hosts
 app.use(vhost('talviruusu.com', express.static('../talviruusu-com/dist')));
 app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
+app.use(vhost('www.talviruusu.com', express.static('../talviruusu-com/dist')));
+app.use(vhost('www.siivousville.com', express.static('../siivousville-com/dist')));
 
 //Start server
 const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialB], app);
