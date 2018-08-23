@@ -5,7 +5,7 @@ app.get('/', (req, res) => {
     console.log(req)
     if(req.headers.host === 'talviruusu.com') {
         res.send('hello talviruusu')
-    } else if(req.headers.host === 'talviruusu.com') {
+    } else if(req.headers.host === 'siivousville.com') {
         req.send('hello siivousville')
     }
 })
