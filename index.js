@@ -3,23 +3,9 @@ const vhost = require('vhost')
 
 const app = express()
 
-function createVirtualHost(domainName, dirPath) {
-    return vhost(domainName, express.static( dirPath ));
-}
-
-//Create the virtual hosts
-var trHost = createVirtualHost("talviruusu.com", "talviruusu");
-var svHost = createVirtualHost("siivousville.com", "siivousville");
-
 //Use the virtual hosts
-app.use(vhost('talviruusu.com', (req, res) => {
-    console.log(req)
-    res.send('Hello from talviruusu')
-}));
-app.use(vhost('siivousville.com', (req, res) => {
-    console.log(req)
-    res.send('Hello from siivousville')
-}));
+app.use(vhost('talviruusu.com', express.static('talviruusu-com')));
+app.use(vhost('siivousville.com', express.static('siivousville-com')));
 
 //Start server
 var port = 80;
