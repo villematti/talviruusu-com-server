@@ -3,6 +3,8 @@ const vhost = require('vhost')
 
 const app = express()
 
+console.log(process)
+
 //Use the virtual hosts
 app.use(vhost('talviruusu.com', express.static('../talviruusu-com/dist')));
 app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
