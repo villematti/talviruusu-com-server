@@ -3,7 +3,7 @@ const vhost = require('vhost')
 
 const app = express()
 
-console.log(process)
+console.log(process.env.sv_cert)
 
 //Use the virtual hosts
 app.use(vhost('talviruusu.com', express.static('../talviruusu-com/dist')));
