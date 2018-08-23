@@ -12,13 +12,13 @@ const defaultCredential = {
     key: fs.readFileSync(process.env.sv_key),
 };
 
-const defaultCredential = {
+const credentialA = {
     host: 'siivousville.com',
     cert: fs.readFileSync(process.env.sv_cert),
     key: fs.readFileSync(process.env.sv_key),
 };
 
-const defaultCredential = {
+const credentialB = {
     host: 'talviruusu.com',
     cert: fs.readFileSync(process.env.sv_cert),
     key: fs.readFileSync(process.env.sv_key),
