@@ -1,16 +1,33 @@
+const fs = require('fs');
 const express = require('express')
 const vhost = require('vhost')
+const vhttps = require('vhttps');
 
 const app = express()
 
-console.log(process.env.sv_cert)
+console.log()
+
+const defaultCredential = {
+    cert: fs.readFileSync(process.env.sv_cert),
+    key: fs.readFileSync(process.env.sv_key),
+};
+
+const defaultCredential = {
+    host: 'siivousville.com',
+    cert: fs.readFileSync(process.env.sv_cert),
+    key: fs.readFileSync(process.env.sv_key),
+};
+
+const defaultCredential = {
+    host: 'talviruusu.com',
+    cert: fs.readFileSync(process.env.sv_cert),
+    key: fs.readFileSync(process.env.sv_key),
+};
 
 //Use the virtual hosts
 app.use(vhost('talviruusu.com', express.static('../talviruusu-com/dist')));
 app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
 
 //Start server
-var port = 80;
-app.listen( port, function() {
-    console.log( 'Express server listening on port %d in %s mode', port, app.settings.env );
-});
+const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialB], app);
+httpsServer.listen(443);
