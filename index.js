@@ -20,8 +20,8 @@ const credentialA = {
 
 const credentialB = {
     host: 'talviruusu.com',
-    cert: fs.readFileSync(process.env.sv_cert),
-    key: fs.readFileSync(process.env.sv_key),
+    cert: fs.readFileSync(process.env.tr_cert),
+    key: fs.readFileSync(process.env.tr_key),
 };
 
 //Use the virtual hosts
@@ -31,3 +31,5 @@ app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
 //Start server
 const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialB], app);
 httpsServer.listen(443);
+
+app.listen(80)
