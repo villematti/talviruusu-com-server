@@ -3,6 +3,8 @@ const express = require('express')
 const vhost = require('vhost')
 const vhttps = require('vhttps');
 
+var router = express.Router();
+
 const app = express()
 
 console.log()
@@ -41,6 +43,9 @@ app.use(vhost('talviruusu.com', express.static('../talviruusu-com/dist')));
 app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
 app.use(vhost('www.talviruusu.com', express.static('../talviruusu-com/dist')));
 app.use(vhost('www.siivousville.com', express.static('../siivousville-com/dist')));
+
+app.use(vhost('api.talviruusu.com', require('./api.js').app))
+app.use(router)
 
 //Start server
 const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialB, credentialC, credentialD], app);
