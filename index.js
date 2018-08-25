@@ -7,7 +7,7 @@ var router = express.Router();
 
 const app = express()
 
-console.log()
+console.log(process.env)
 
 const defaultCredential = {
     cert: fs.readFileSync(process.env.sv_cert),
