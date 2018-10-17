@@ -44,6 +44,12 @@ const credentialE = {
     key: fs.readFileSync(process.env.tr_api_key),
 };
 
+const credentialF = {
+    host: 'uudenmaanikkunapalvelu.talviruusu.com',
+    cert: fs.readFileSync(process.env.ikp_api_cert),
+    key: fs.readFileSync(process.env.ikp_api_key)
+}
+
 //Use the virtual hosts
 app.use(vhost('talviruusu.com', express.static('../talviruusu-com/dist')));
 app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
@@ -55,7 +61,7 @@ app.use(vhost('api.talviruusu.com', require('./api.js').app))
 app.use(router)
 
 //Start server
-const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialB, credentialC, credentialD, credentialE], app);
+const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialB, credentialC, credentialD, credentialE, credentialF], app);
 httpsServer.listen(443);
 
 app.listen(80)
