@@ -2,6 +2,12 @@ var express = require('express');
 var app = express();
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const cors = require("cors");
+
+const corsOptions1 = {
+  origin: 'https://uudenmaanikkunapalvelu.talviruusu.com',
+  optionsSuccessStatus: 200
+}
 
 var router = express.Router();
 
@@ -13,7 +19,7 @@ router.get('/', function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/api/form", (req, res) => {
+app.post("/api/form", corst(corsOptions1), (req, res) => {
   const htmlEmail = `
   <h3>Contact Details</h3>
   <ul>

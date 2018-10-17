@@ -17,11 +17,12 @@
   },
   "homepage": "https://github.com/villematti/talviruusu-com-server#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "nodemailer": "^4.6.8",
     "vhost": "^3.0.2",
-    "vhttps": "^0.1.1",
-    "body-parser": "^1.18.3",
-    "concurrently": "^4.0.1"
+    "vhttps": "^0.1.1"
   }
 }
