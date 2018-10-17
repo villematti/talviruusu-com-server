@@ -46,8 +46,8 @@ const credentialE = {
 
 const credentialF = {
     host: 'uudenmaanikkunapalvelu.talviruusu.com',
-    cert: fs.readFileSync(process.env.ikp_api_cert),
-    key: fs.readFileSync(process.env.ikp_api_key)
+    cert: fs.readFileSync(process.env.ikp_cert),
+    key: fs.readFileSync(process.env.ikp_key)
 }
 
 //Use the virtual hosts
