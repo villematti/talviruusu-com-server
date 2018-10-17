@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/api/form", corst(corsOptions1), (req, res) => {
+app.post("/api/form", cors(corsOptions1), (req, res) => {
   const htmlEmail = `
   <h3>Contact Details</h3>
   <ul>
