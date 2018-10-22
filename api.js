@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 
 const corsOptions1 = {
-  origin: 'https://uudenmaanikkunapalvelu.talviruusu.com',
+  origin: 'https://mainos.uudenmaanikkunapalvelu.com',
   optionsSuccessStatus: 200
 }
 
@@ -43,8 +43,8 @@ app.post("/api/form", (req, res) => {
 
   let mailOptions = {
     from: req.body.email, // sender address
-    to: process.env.emailAddress || "your_email_address", // list of receivers
-    subject: "New Message", // Subject line
+    to: process.env.receiverAddress || "receiver_addresses", // list of receivers
+    subject: "Uusi liidi", // Subject line
     email: req.body.email, // plain text body
     html: htmlEmail // html body
   };
