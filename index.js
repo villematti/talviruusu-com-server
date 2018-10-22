@@ -45,7 +45,7 @@ const credentialE = {
 };
 
 const credentialF = {
-    host: 'uudenmaanikkunapalvelu.talviruusu.com',
+    host: 'mainos.uudenmaanikkunapalvelu.com',
     cert: fs.readFileSync(process.env.ikp_cert),
     key: fs.readFileSync(process.env.ikp_key)
 }
