@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 
 const corsOptions1 = {
-  origin: 'https://mainos.uudenmaanikkunapalvelu.com',
+  origin: 'https://tarjous.uudenmaanikkunapalvelu.com',
   optionsSuccessStatus: 200
 }
 
