@@ -50,6 +50,12 @@ const credentialH = {
     key: fs.readFileSync(process.env.km_key)
 }
 
+const credentialI = {
+    host: 'statbeat.talviruusu.com',
+    cert: fs.readFileSync(process.env.stat_cert),
+    key: fs.readFileSync(process.env.stat_key)
+}
+
 //Use the virtual hosts
 app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
 app.use(vhost('www.talviruusu.com', express.static('../talviruusu-com/dist')));
@@ -63,7 +69,7 @@ app.use(vhost('api.talviruusu.com', require('./api.js').app))
 app.use(router)
 
 //Start server
-const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialC, credentialE, credentialF, credentialG, credentialH], app);
+const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialC, credentialE, credentialF, credentialG, credentialH, credentialI], app);
 httpsServer.listen(443);
 
 app.listen(80)
