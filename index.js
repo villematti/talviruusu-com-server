@@ -57,7 +57,7 @@ app.use(vhost('www.siivousville.com', express.static('../siivousville-com/dist')
 app.use(vhost('katmaar.fi', express.static('../katmaar.fi/build')));
 app.use(vhost('www.katmaar.fi', express.static('../katmaar.fi/build')));
 app.use(vhost('tarjous.uudenmaanikkunapalvelu.com', express.static('../uudenmaanikkunapalvelu.talviruusu.com/client/build')));
-app.use(vhost('statbeat.talviruusu.com', express.static('../landing-statbeat')));
+app.use(vhost('statbeat.talviruusu.com', express.static('../landing-statbeat/build')));
 
 app.use(vhost('api.talviruusu.com', require('./api.js').app))
 app.use(router)
