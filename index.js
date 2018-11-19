@@ -20,12 +20,6 @@ const credentialA = {
     key: fs.readFileSync(process.env.sv_key),
 };
 
-const credentialB = {
-    host: 'talviruusu.com',
-    cert: fs.readFileSync(process.env.tr_cert),
-    key: fs.readFileSync(process.env.tr_key),
-};
-
 const credentialC = {
     host: 'www.siivousville.com',
     cert: fs.readFileSync(process.env.sv_www_cert),
@@ -69,7 +63,7 @@ app.use(vhost('api.talviruusu.com', require('./api.js').app))
 app.use(router)
 
 //Start server
-const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialB, credentialC, credentialE, credentialF, credentialG, credentialH], app);
+const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialC, credentialE, credentialF, credentialG, credentialH], app);
 httpsServer.listen(443);
 
 app.listen(80)
