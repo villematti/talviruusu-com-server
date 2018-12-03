@@ -56,6 +56,18 @@ const credentialI = {
     key: fs.readFileSync(process.env.stat_key)
 }
 
+const credentialJ = {
+    host: 'statbeat.com',
+    cert: fs.readFileSync(process.env.stat2_cert),
+    key: fs.readFileSync(process.env.stat2_key)
+}
+
+const credentialK = {
+    host: 'www.statbeat.com',
+    cert: fs.readFileSync(process.env.stat2_cert),
+    key: fs.readFileSync(process.env.stat2_key)
+}
+
 //Use the virtual hosts
 app.use(vhost('siivousville.com', express.static('../siivousville-com/dist')));
 app.use(vhost('www.talviruusu.com', express.static('../talviruusu-com/dist')));
@@ -70,7 +82,7 @@ app.use(vhost('api.talviruusu.com', require('./api.js').app))
 app.use(router)
 
 //Start server
-const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialC, credentialE, credentialF, credentialG, credentialH, credentialI], app);
+const httpsServer = vhttps.createServer(defaultCredential, [credentialA, credentialC, credentialE, credentialF, credentialG, credentialH, credentialI, credentialJ, credentialK], app);
 httpsServer.listen(443);
 
 app.listen(80)
